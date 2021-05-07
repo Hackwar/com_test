@@ -1,0 +1,41 @@
+<field>
+	<title>Generic Form Field</title>
+	<options>
+		<option name="description">Description</option>
+		<option name="hint">Hint</option>
+		<option name="autocomplete">Autocomplete</option>
+		<option name="spellcheck">Spellcheck</option>
+		<option name="autofocus">Autofocus</option>
+		<option name="hidden">Hidden</option>
+		<option name="hiddenLabel">Hidden Label</option>
+		<option name="hiddenDescription">Hidden Description</option>
+		<option name="translateLabel">Translate Label</option>
+		<option name="translateDescription">Translate Description</option>
+		<option name="translateHint">Translate Hint</option>
+		<option name="multiple">Multiple</option>
+		<option name="repeat">Repeat</option>
+		<option name="pattern">Pattern</option>
+		<option name="validationtext">Validation Text</option>
+		<option name="Name">Name</option>
+		<option name="fieldname">Field Name</option>
+		<option name="group">Group</option>
+		<option name="required">Required</option>
+		<option name="disabled">Disabled</option>
+		<option name="readonly">Readonly</option>
+		<option name="type">Type</option>
+		<option name="validate">Validate</option>
+		<option name="value">Value</option>
+		<option name="default">Default</option>
+		<option name="size">Size</option>
+		<option name="class">Class</option>
+		<option name="lableclass">Label Class</option>
+		<option name="onchange">onChange</option>
+		<option name="onclick">onClick</option>
+		<option name="showon">Show on</option>
+		<option name="layout">Layout</option>
+		<option name="renderLayout">Render Layout</option>
+		<option name="renderLabelLayout">Render Label Layout</option>
+		<option name="dataAttributes">Data Attributes</option>
+		<option name="parentClass">Parent Class</option>
+	</options>
+</field>

@@ -1,0 +1,79 @@
+<field>
+	<title>Text</title>
+	<inherits>FormField</inherits>
+	<options>
+		<option name="maxLength">Max Length</option>
+		<option name="inputmode">Inputmode</option>
+		<option name="dirname">Direction</option>
+		<option name="addonBefore">Addon Before</option>
+		<option name="addonAfter">Addon After</option>
+		<option name="layout">Layout</option>
+		useglobal???
+	</options>
+</field>
+
+
+
+
+
+	/**
+	 * Method to get the field options.
+	 *
+	 * @return  array  The field option objects.
+	 *
+	 * @since   3.4
+	 */
+	protected function getOptions()
+	{
+		$options = array();
+
+		foreach ($this->element->children() as $option)
+		{
+			// Only add <option /> elements.
+			if ($option->getName() !== 'option')
+			{
+				continue;
+			}
+
+			// Create a new option object based on the <option /> element.
+			$options[] = HTMLHelper::_(
+				'select.option', (string) $option['value'],
+				Text::alt(trim((string) $option), preg_replace('/[^a-zA-Z0-9_\-]/', '_', $this->fieldname)), 'value', 'text'
+			);
+		}
+
+		return $options;
+	}
+
+	/**
+	 * Method to get the data to be passed to the layout for rendering.
+	 *
+	 * @return  array
+	 *
+	 * @since 3.7
+	 */
+	protected function getLayoutData()
+	{
+		$data = parent::getLayoutData();
+
+		// Initialize some field attributes.
+		$maxLength    = !empty($this->maxLength) ? ' maxlength="' . $this->maxLength . '"' : '';
+		$inputmode    = !empty($this->inputmode) ? ' inputmode="' . $this->inputmode . '"' : '';
+		$dirname      = !empty($this->dirname) ? ' dirname="' . $this->dirname . '"' : '';
+
+		// Get the field options for the datalist.
+		$options  = (array) $this->getOptions();
+
+		$extraData = array(
+			'maxLength'   => $maxLength,
+			'pattern'     => $this->pattern,
+			'inputmode'   => $inputmode,
+			'dirname'     => $dirname,
+			'addonBefore' => $this->addonBefore,
+			'addonAfter'  => $this->addonAfter,
+			'options'     => $options,
+		);
+
+		return array_merge($data, $extraData);
+	}
+}
